@@ -25,6 +25,8 @@ return new class extends Migration
             $table->json('writers')->nullable();
 
             $table->timestamps();
+
+            
         });
     }
 
