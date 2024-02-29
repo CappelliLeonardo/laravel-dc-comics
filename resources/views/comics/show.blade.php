@@ -5,18 +5,34 @@
 @section('main-content')
 
 <div class=" container">
-    <h2>
-        Descrizione
-    </h2>
-
-    <p class="card-text">{{ $comic->description }}</p>
-
-    <h2>
-        Writers
-    </h2>
-    <p>
-        {{ $comic->writers }}
-    </p>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src={{ $comic->thumb }} alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{ $comic->title }}</h5>
+            <ul>
+                <li>
+                    {{ $comic->price}}  euro
+                    {{ $comic->series}}
+                </li>
+                <li>
+                    {{ $comic->sale_date }}
+                    {{ $comic->type }}
+                </li>
+                <li>
+                    {{ $comic->description }}
+                </li>
+                <li>
+                    {{ $comic->writers }}
+                </li>
+            </ul>
+            <p>
+                {{ $comic->artists }}
+            </p>
+            
+            </div>
+        </div>
+</div>
 
     <a href="{{ route ('comics.index') }}"> Torna a tutti i comic </a>
 

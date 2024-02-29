@@ -25,6 +25,12 @@
                                 {{ $singleComic->sale_date }}
                                 {{ $singleComic->type }}
                             </li>
+                            <li>
+                                {{ $singleComic->description }}
+                            </li>
+                            <li>
+                                {{ $singleComic->writers }}
+                            </li>
                         </ul>
                         <p>
                             {{ $singleComic->artists }}
