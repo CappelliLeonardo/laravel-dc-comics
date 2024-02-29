@@ -18,7 +18,7 @@
                         <h5 class="card-title">{{ $singleComic->title }}</h5>
                         <ul>
                             <li>
-                                {{ $singleComic->price}}
+                                {{ $singleComic->price}}  euro
                                 {{ $singleComic->series}}
                             </li>
                             <li>
