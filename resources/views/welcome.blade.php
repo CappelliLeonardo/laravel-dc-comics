@@ -7,6 +7,7 @@
     Laravel Start 1
 </h1>
 
+<a href="{{ route ('comics.index') }}"> Vai a tutti i comic </a>
 
 
 @endsection

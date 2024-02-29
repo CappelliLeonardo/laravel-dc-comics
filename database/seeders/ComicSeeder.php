@@ -35,7 +35,7 @@ class ComicSeeder extends Seeder
             $comic->writers = json_encode($singleComic['writers']);
 
             $comic->save();
-            dd($comic);
+            //dd($comic);
         };
         
     }

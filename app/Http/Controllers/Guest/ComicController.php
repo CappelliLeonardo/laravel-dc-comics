@@ -41,7 +41,7 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id)  //inserire la classe dell'oggetto 
     {
         //
     }
