@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 // Models
 
-use App\Models\Admin\comic;
+use App\Models\Comic;
 class ComicController extends Controller
 {
 
@@ -41,9 +41,9 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)  //inserire la classe dell'oggetto 
+    public function show(Comic $comic)
     {
-        //
+        return view('comics.show', compact('comic'));
     }
 
     /**

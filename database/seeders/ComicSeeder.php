@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 // Models 
-use App\Models\Admin\Comic;
+use App\Models\Comic;
 class ComicSeeder extends Seeder
 {
     /**
@@ -19,7 +19,7 @@ class ComicSeeder extends Seeder
 
         foreach ($comicsData as $index => $singleComic) {
              
-            $comic = new comic();
+            $comic = new Comic();
             $comic->title = $singleComic['title'];
             $comic->description = $singleComic['description'];
             $comic->thumb = $singleComic['thumb'];

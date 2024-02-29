@@ -16,7 +16,6 @@
                         <img class="card-img-top" src={{ $singleComic->thumb }} alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $singleComic->title }}</h5>
-                        <p class="card-text">{{ $singleComic->description }}</p>
                         <ul>
                             <li>
                                 {{ $singleComic->price}}
@@ -30,10 +29,8 @@
                         <p>
                             {{ $singleComic->artists }}
                         </p>
-                        <p>
-                            {{ $singleComic->writers }}
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        
+                        <a href="{{ route ('comics.show', ['comic' => $singleComic->id]) }}" class="btn btn-primary">Scopri descrizione e autori</a>
                         </div>
                     </div>
             </div>
