@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comic extends Model
 {
     use HasFactory;
+
+     // i campi che sono mass assignable sono : .........
+     //protected $fillable=['title','description','thumb','price','series','sale_date','type','artists','writers'];
+    //nessun 
+    protected $guarded=[];
 }

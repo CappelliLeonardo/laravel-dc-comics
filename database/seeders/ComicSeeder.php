@@ -24,15 +24,15 @@ class ComicSeeder extends Seeder
             $comic->description = $singleComic['description'];
             $comic->thumb = $singleComic['thumb'];
             
-            $explodePrice = explode('$', $singleComic['price']);
-            $comic->price = floatval($explodePrice[1]);
+            $explodePrice = str_replace('$', '', $singleComic['price']);
+            $comic->price = floatval($explodePrice);
 
             $comic->series = $singleComic['series'];
             $comic->sale_date = $singleComic['sale_date'];
             $comic->type = $singleComic['type'];
 
-            $comic->artists = json_encode($singleComic['artists']);
-            $comic->writers = json_encode($singleComic['writers']);
+            $comic->artists = implode( ',' , $singleComic['artists']);
+            $comic->writers = implode (',', $singleComic['writers']);
 
             $comic->save();
             //dd($comic);
