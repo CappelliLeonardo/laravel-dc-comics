@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\ComicController;
 
 Route::get('/', function () {
-    return redirect('/comics');
+    return view('welcome', [
+       
+    ]);
+    // return view('welcome', compact('firstName', 'lastName'));
 });
 
 

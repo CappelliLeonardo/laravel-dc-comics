@@ -11,7 +11,7 @@ use App\Models\Comic;
 class ComicController extends Controller
 {
 
-    //Route::resource('comics', ComicsController::class))
+
     /**
      * Display a listing of the resource.
      */
@@ -36,11 +36,26 @@ class ComicController extends Controller
     public function store(Request $request)
     {
 
-
-
-            $comicData = $request->all();
+            //$comicData = $request->all();
             //dd($comicData);
-            $comic = Comic::create($comicData);
+
+            $validatedData = $request->validate([
+                'title'=> 'required|max:64',
+                'description'=> 'required|max:1024',
+                'thumb'=>'nullable|max:1024',
+                'price'=>'required|numeric|max:20',
+                'series'=>'required|max:64',
+                'sale_date'=>'required|date',
+                'type'=>'required|max:64',
+                'artists'=>'required|max:1000',
+                'writers'=>'nullable|max:1000',
+            ]);
+            //dd($validatedData);
+
+            //$validatedData = $request->all();
+            //dd($comicData);
+
+            $comic = Comic::create($validatedData);
 
 
             // $comic = new Comic();
