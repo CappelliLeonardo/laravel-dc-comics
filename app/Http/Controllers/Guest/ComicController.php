@@ -94,6 +94,9 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         //dd($comic);
+
+        
+
         return view('comics.edit' , compact('comic'));
     }
 
@@ -105,10 +108,24 @@ class ComicController extends Controller
         //dd($request);
 
             
-            $comicData = $request->all();
+            //$comicData = $request->all();
+
+            $validatedData = $request->validate([
+                'title'=> 'required|max:64',
+                'description'=> 'required|max:1024',
+                'thumb'=>'nullable|max:1024',
+                'price'=>'required|numeric|max:20',
+                'series'=>'required|max:64',
+                'sale_date'=>'required|date',
+                'type'=>'required|max:64',
+                'artists'=>'required|max:1000',
+                'writers'=>'nullable|max:1000',
+            ]);
+    
+                $comic->update($validatedData);
 
 
-            $comic->update($comicData);
+            //$comic->update($comicData);
 
             // $comic->title = $comicData['title'];
             // $comic->description = $comicData['description'];
