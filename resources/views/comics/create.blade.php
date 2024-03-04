@@ -30,46 +30,91 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il titolo" maxlength="64" value="{{ old('title') }}">
+                @error('title')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description </label>
                 <input value="{{ old('description') }}" type="text" class="form-control" id="description" name="description" placeholder="Inserisci la descrizione" maxlength="1024" required>
+                @error('description')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="thumb" class="form-label">IMG url</label>
                 <input value="{{ old('thumb') }}" type="text" class="form-control" id="thumb" name="thumb" placeholder="Inserisci il tipo..." maxlength="1024" required>
+                @error('thumb')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input value="{{ old('price') }}" type="text" class="form-control" id="price" name="price" placeholder="Inserisci l'url" min="1" max="20">
+                @error('price')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="series" class="form-label">Serie</label>
                 <input value="{{ old('series') }}" type="text" class="form-control" id="series" name="series" placeholder="Inserisci la dserie" max="64">
+                @error('series')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Data di uscita</label>
-                <textarea  type="date" class="form-control" id="sale_date" name="sale_date" rows="1" placeholder="Inserisci la data">value="{{ old('sale_date') }}"</textarea>
+                <textarea value="{{ old('sale_date') }}" type="date" class="form-control" id="sale_date" name="sale_date" rows="1" placeholder="Inserisci la data"></textarea>
+                @error('sale_date')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="series" class="form-label">Tipologia<span class="text-danger"></span></label>
                 <input value="{{ old('type') }}" type="text" class="form-control" id="type" name="type" placeholder="Inserisci la tipologia" maxlength="64" required>
+                @error('type')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="artists" class="form-label">Artisti<span class="text-danger"></span></label>
                 <input value="{{ old('artists') }}" type="text" class="form-control" id="artists" name="artists" placeholder="Inserisci l'artista " maxlength="1000" required>
+                @error('artists')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="writers" class="form-label">Scrittori<span class="text-danger"></span></label>
                 <input value="{{ old('writers') }}" type="text" class="form-control" id="writers" name="writers" placeholder="Inserisci gli scritori" maxlength="1000" required>
+                @error('writers')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div>
